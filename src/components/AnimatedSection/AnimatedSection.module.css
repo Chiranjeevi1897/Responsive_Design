@@ -1,0 +1,46 @@
+.animatedSection {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.animateUp {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.animateDown {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.animateLeft {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.animateRight {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Initial states (hidden) */
+.animatedSection:not(.animateUp, .animateDown, .animateLeft, .animateRight) {
+  opacity: 0;
+}
+
+.animatedSection:not(.animateUp) {
+  transform: translateY(30px);
+}
+
+.animatedSection:not(.animateDown) {
+  transform: translateY(-30px);
+}
+
+.animatedSection:not(.animateLeft) {
+  transform: translateX(30px);
+}
+
+.animatedSection:not(.animateRight) {
+  transform: translateX(-30px);
+}

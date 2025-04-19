@@ -1,0 +1,175 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: all 0.3s ease;
+  padding: 1.5rem 2rem;
+  background-color: transparent;
+}
+
+.header.scrolled {
+  background-color: rgba(255, 255, 255, 0.98);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 1rem 2rem;
+  backdrop-filter: blur(10px);
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 1.8rem;
+  letter-spacing: -0.5px;
+  color: #333;
+  z-index: 1001;
+}
+
+.scrolled .logo {
+  color: #333;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+}
+
+.navList {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navList li {
+  margin: 0 1.25rem;
+}
+
+.navList a {
+  font-weight: 500;
+  font-size: 1rem;
+  color: #333;
+  transition: color 0.2s;
+  position: relative;
+}
+
+.navList a:after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #3b82f6;
+  transition: width 0.3s ease;
+}
+
+.navList a:hover {
+  color: #3b82f6;
+}
+
+.navList a:hover:after {
+  width: 100%;
+}
+
+.navButtons {
+  display: flex;
+  margin-left: 2rem;
+}
+
+.loginButton, .signupButton {
+  font-weight: 500;
+  font-size: 0.95rem;
+  padding: 0.6rem 1.2rem;
+  border-radius: 50px;
+  transition: all 0.2s;
+}
+
+.loginButton {
+  background-color: transparent;
+  color: #333;
+  border: none;
+  margin-right: 0.5rem;
+}
+
+.loginButton:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.signupButton {
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+}
+
+.signupButton:hover {
+  background-color: #2563eb;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
+
+.menuButton {
+  display: none;
+  background: none;
+  border: none;
+  color: #333;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+@media (max-width: 1023px) {
+  .menuButton {
+    display: block;
+  }
+  
+  .nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    height: 100vh;
+    width: 100%;
+    background: white;
+    flex-direction: column;
+    justify-content: center;
+    transition: right 0.3s ease;
+    z-index: 1000;
+  }
+  
+  .nav.open {
+    right: 0;
+  }
+  
+  .navList {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .navList li {
+    margin: 1.5rem 0;
+  }
+  
+  .navList a {
+    font-size: 1.5rem;
+  }
+  
+  .navButtons {
+    margin: 2rem 0 0;
+    flex-direction: column;
+    width: 80%;
+    max-width: 300px;
+  }
+  
+  .loginButton, .signupButton {
+    width: 100%;
+    padding: 1rem;
+    margin: 0.5rem 0;
+    font-size: 1.1rem;
+  }
+}
